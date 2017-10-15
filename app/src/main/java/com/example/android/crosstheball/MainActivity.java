@@ -1,10 +1,12 @@
 package com.example.android.crosstheball;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionProvider;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
@@ -21,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView ball;
     Animation translateBall;
     int counter = 0,points = 0;
-    TextView quesText,txtPoints;
+    TextView quesText;
+    TextView txtPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +73,13 @@ public class MainActivity extends AppCompatActivity {
         if( points == 5){
             Toast.makeText(this,"You Won",Toast.LENGTH_SHORT).show();
             ball.startAnimation(translateBall);
+            btnFalse.setEnabled(false);
+            btnTrue.setEnabled(false);
         }
         else if(counter == 8 && points != 5){
             Toast.makeText(this,"You Lost",Toast.LENGTH_SHORT).show();
+            btnFalse.setEnabled(false);
+            btnTrue.setEnabled(false);
         }
         else{
             final AlphaAnimation fadeIn = new AlphaAnimation(0.0f, 1.0f);
