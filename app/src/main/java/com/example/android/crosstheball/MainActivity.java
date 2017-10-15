@@ -75,7 +75,27 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"You Lost",Toast.LENGTH_SHORT).show();
         }
         else{
-            quesText.setText(Utils.game[counter][0]);
+            final AlphaAnimation fadeIn = new AlphaAnimation(0.0f, 1.0f);
+            final AlphaAnimation fadeOut = new AlphaAnimation(1f, 0f);
+            fadeOut.setFillAfter(true);
+            fadeIn.setDuration(400);
+            fadeOut.setDuration(400);
+            fadeIn.setFillAfter(true);
+            fadeIn.setStartOffset(200);
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {}
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    quesText.setText(Utils.game[counter][0]);
+                    quesText.startAnimation(fadeIn);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {}
+            });
+            quesText.startAnimation(fadeOut);
         }
     }
 }
