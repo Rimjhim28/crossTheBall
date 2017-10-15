@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView ball;
     Animation translateBall;
     int counter = 0,points = 0;
-    TextView quesText;
+    TextView quesText,txtPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         translateBall.setDuration(3000);
         btnTrue = (Button) findViewById(R.id.btnTrue);
         btnFalse = (Button) findViewById(R.id.btnFalse);
+        txtPoints = (TextView) findViewById(R.id.points);
         quesText.setText(Utils.game[counter][0]);
     }
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         ((ImageView) findViewById(Utils.brick[points])).setVisibility(View.VISIBLE);
         points = points + 1;
         counter = counter + 1;
+        txtPoints.setText(Integer.toString(points));
         nextQuestion();
     }
 
