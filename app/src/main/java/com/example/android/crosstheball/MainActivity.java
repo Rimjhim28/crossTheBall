@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void answerCorrect(){
-        ((ImageView) findViewById(Utils.brick[points])).setVisibility(View.VISIBLE);
+        (findViewById(Utils.brick[points])).setAlpha(1.0f);
         points = points + 1;
         counter = counter + 1;
         txtPoints.setText(Integer.toString(points));
