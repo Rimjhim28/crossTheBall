@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             ball.startAnimation(translateBall);
             btnFalse.setEnabled(false);
             btnTrue.setEnabled(false);
+            countDownTimer.cancel();
         }
         else if(counter == 8 && points != 5){
             Toast.makeText(this,"You Lost",Toast.LENGTH_SHORT).show();
