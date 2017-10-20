@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0,points = 0;
     TextView quesText;
     TextView txtPoints;
+    TextView timer;
+    CountDownTimer countDownTimer;
+    long millisLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,25 @@ public class MainActivity extends AppCompatActivity {
         btnFalse = (Button) findViewById(R.id.btnFalse);
         txtPoints = (TextView) findViewById(R.id.points);
         quesText.setText(Utils.game[counter][0]);
+         millisLeft = 40000;
+        timer = (TextView) findViewById(R.id.timer);
+        countDownTimer = new CountDownTimer(millisLeft,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                millisLeft = millisUntilFinished;
+                long secLeft = millisLeft/1000;
+                timer.setText(""+secLeft);
+            }
+
+            @Override
+            public void onFinish() {
+                btnTrue.setEnabled(false);
+                btnFalse.setEnabled(false);
+                timer.setText("TIME UP");
+            }
+        };
+
+        countDownTimer.start();
     }
 
     public void answerChosen(View view) {
