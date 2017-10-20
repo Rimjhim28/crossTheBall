@@ -45,23 +45,15 @@ public class MainActivity extends AppCompatActivity {
         quesText.setText(Utils.game[counter][0]);
          millisLeft = 40000;
         timer = (TextView) findViewById(R.id.timer);
-        countDownTimer = new CountDownTimer(millisLeft,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                millisLeft = millisUntilFinished;
-                long secLeft = millisLeft/1000;
-                timer.setText(""+secLeft);
-            }
+        setUpCounter(findViewById(R.id.btnResume));
 
+        btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFinish() {
-                btnTrue.setEnabled(false);
-                btnFalse.setEnabled(false);
-                timer.setText("TIME UP");
+            public void onClick(View v) {
+                millisBeforPause = millisLeft;
+                countDownTimer.cancel();
             }
-        };
-
-        countDownTimer.start();
+        });
     }
 
     public void answerChosen(View view) {
@@ -137,5 +129,23 @@ public class MainActivity extends AppCompatActivity {
         fadeIn.setStartOffset(200);
         (findViewById(Utils.brick[points])).setAlpha(1.0f);
         (findViewById(Utils.brick[points])).startAnimation(fadeIn);
+    }
+      public void setUpCounter(View view){
+        countDownTimer = new CountDownTimer(millisBeforPause,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                millisLeft = millisUntilFinished;
+                long secLeft = millisLeft/1000;
+                timer.setText(""+secLeft);
+            }
+
+            @Override
+            public void onFinish() {
+                btnTrue.setEnabled(false);
+                btnFalse.setEnabled(false);
+                timer.setText("TIME UP");
+            }
+        };
+        countDownTimer.start();
     }
 }
