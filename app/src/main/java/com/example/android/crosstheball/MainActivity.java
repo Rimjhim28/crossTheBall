@@ -19,7 +19,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnTrue,btnFalse;
+    Button btnTrue,btnFalse,btnPause,btnResume;
     ImageView ball;
     Animation translateBall;
     int counter = 0,points = 0;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtPoints;
     TextView timer;
     CountDownTimer countDownTimer;
-    long millisLeft;
+    long millisLeft,millisBeforPause = 40000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         translateBall.setDuration(3000);
         btnTrue = (Button) findViewById(R.id.btnTrue);
         btnFalse = (Button) findViewById(R.id.btnFalse);
+        btnPause = (Button) findViewById(R.id.btnPause);
+        btnResume = (Button) findViewById(R.id.btnResume);
         txtPoints = (TextView) findViewById(R.id.points);
         quesText.setText(Utils.game[counter][0]);
          millisLeft = 40000;
