@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             countDownTimer.cancel();
         }
         else if(counter == 8 && points != 5){
-            Toast.makeText(this,"You Lost",Toast.LENGTH_SHORT).show();
+            quesText.setText("YOU LOST!!");
             btnFalse.setEnabled(false);
             btnTrue.setEnabled(false);
         }
