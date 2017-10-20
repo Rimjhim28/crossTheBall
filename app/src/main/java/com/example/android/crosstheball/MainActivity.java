@@ -89,9 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void nextQuestion(){
         if( points == 5){
-            Toast.makeText(this,"You Won",Toast.LENGTH_SHORT).show();
+            quesText.setText("YOU WON!!");
             ball.startAnimation(translateBall);
             btnFalse.setEnabled(false);
+            btnTrue.setEnabled(false);
+            btnPause.setEnabled(false);
             btnTrue.setEnabled(false);
             countDownTimer.cancel();
         }
