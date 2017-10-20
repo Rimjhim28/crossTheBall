@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void answerCorrect(){
-        (findViewById(Utils.brick[points])).setAlpha(1.0f);
+        showBlock();
         points = points + 1;
         counter = counter + 1;
         txtPoints.setText(Integer.toString(points));
@@ -126,5 +126,13 @@ public class MainActivity extends AppCompatActivity {
             });
             quesText.startAnimation(fadeOut);
         }
+    }
+    public void showBlock(){
+        final AlphaAnimation fadeIn = new AlphaAnimation(0.0f,1.0f);
+        fadeIn.setFillAfter(true);
+        fadeIn.setDuration(800);
+        fadeIn.setStartOffset(200);
+        (findViewById(Utils.brick[points])).setAlpha(1.0f);
+        (findViewById(Utils.brick[points])).startAnimation(fadeIn);
     }
 }
