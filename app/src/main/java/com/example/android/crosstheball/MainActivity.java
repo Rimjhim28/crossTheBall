@@ -133,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
         (findViewById(Utils.brick[points])).startAnimation(fadeIn);
     }
       public void setUpCounter(View view){
+           btnTrue.setEnabled(true);
+           btnFalse.setEnabled(true);
         countDownTimer = new CountDownTimer(millisBeforPause,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
