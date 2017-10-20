@@ -46,37 +46,42 @@
 
         <ImageView
             android:id="@+id/first_brick"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:src="@drawable/brick"/>
         <ImageView
             android:id="@+id/image1"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/brick"
             android:alpha="0.0"/>
         <ImageView
             android:id="@+id/image2"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/brick"
             android:alpha="0.0"/>
         <ImageView
             android:id="@+id/image3"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/brick"
             android:alpha="0.0"/>
         <ImageView
             android:id="@+id/image4"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/brick"
             android:alpha="0.0"/>
         <ImageView
             android:id="@+id/image5"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:src="@drawable/brick"
             android:alpha="0.0"/>
     </LinearLayout>
