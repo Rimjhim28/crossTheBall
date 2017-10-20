@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 millisBeforPause = millisLeft;
+                btnTrue.setEnabled(false);
+                btnFalse.setEnabled(false);
                 countDownTimer.cancel();
             }
         });
