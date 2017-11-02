@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nextQuestion(){
-        if( points == 5){
+        if(points == 5){
             quesText.setText("YOU WON!!");
             ball.startAnimation(translateBall);
             btnFalse.setEnabled(false);
