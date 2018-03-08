@@ -4,6 +4,4 @@
         android:fromXDelta="0.0"
         android:toXDelta="90%p"
         />
-
-
 </set>
