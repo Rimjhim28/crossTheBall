@@ -1,15 +1,24 @@
 package com.example.android.crosstheball;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ActionProvider;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import static android.R.attr.start;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnResume = (Button) findViewById(R.id.btnResume);
         txtPoints = (TextView) findViewById(R.id.points);
         quesText.setText(Utils.game[counter][0]);
-         millisLeft = 40000;
+        millisLeft = 40000;
         timer = (TextView) findViewById(R.id.timer);
         setUpCounter(findViewById(R.id.btnResume));
 
@@ -61,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
                 answerWrong();
         }
         else if (view == findViewById(R.id.btnFalse)) {
-                if (Utils.game[counter][1] == "F")
-                    answerCorrect();
-                else
-                    answerWrong();
+            if (Utils.game[counter][1] == "F")
+                answerCorrect();
+            else
+                answerWrong();
         }
     }
 
@@ -82,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nextQuestion(){
-        if(points == 5){
+        if( points == 5){
             quesText.setText("YOU WON!!");
             ball.startAnimation(translateBall);
             btnFalse.setEnabled(false);
@@ -120,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             quesText.startAnimation(fadeOut);
         }
     }
+
     public void showBlock(){
         final AlphaAnimation fadeIn = new AlphaAnimation(0.0f,1.0f);
         fadeIn.setFillAfter(true);
@@ -128,9 +138,10 @@ public class MainActivity extends AppCompatActivity {
         (findViewById(Utils.brick[points])).setAlpha(1.0f);
         (findViewById(Utils.brick[points])).startAnimation(fadeIn);
     }
-      public void setUpCounter(View view){
-           btnTrue.setEnabled(true);
-           btnFalse.setEnabled(true);
+
+    public void setUpCounter(View view){
+        btnTrue.setEnabled(true);
+        btnFalse.setEnabled(true);
         countDownTimer = new CountDownTimer(millisBeforPause,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
