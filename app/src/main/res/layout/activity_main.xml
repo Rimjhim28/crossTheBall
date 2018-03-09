@@ -9,6 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/question_text"
+        android:textSize="20sp"
+        android:gravity="center"
         />
     <LinearLayout
         android:id="@+id/btns"
@@ -95,12 +97,14 @@
         <TextView
             android:text="POINTS:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"/>
+            android:text="0"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -111,12 +115,14 @@
         <TextView
             android:text="TIME LEFT:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"/>
+            android:text="0"
+            android:textSize="20sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
