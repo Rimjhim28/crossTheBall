@@ -1,5 +1,5 @@
 # Cross The Ball
-This is a quiz application with true/false questions. The user needs to answer to build the bridge for the ball to cross from one end of the screen to another. 
+This is a quiz game application with true/false questions. The user needs to answer to build the bridge for the ball to cross from one end of the screen to another. 
 It includes a simple animation to cross the ball from one end of the screen to the other.
 With each correct answer the user gets a block to build the bridge further that would help the ball to trancslate from one end of the screen to the other. After getting required number of blocks the bridge is built up and the ball is able to cross.
 
